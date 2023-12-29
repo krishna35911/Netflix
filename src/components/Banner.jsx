@@ -3,14 +3,12 @@ import './Banner.css'
 import instance from '../instance';
 
 function Banner({fetchURL}) {
-    // console.log(fetchURL);
     const[movie,setMovie]=useState()
     const base_url = "https://image.tmdb.org/t/p/original/";
 
     const fetchData=async()=>
     {
         const {data}=await instance.get(fetchURL)
-        // console.log(data.results);
         setMovie(data.results[Math.floor(Math.random()*data.results.length)])
     }
     console.log(movie);
